@@ -1,0 +1,157 @@
+.full-page.lock-page, .full-page.login-page, .full-page.pricing-page, .full-page.register-page {
+  min-height: 100vh;
+  background: radial-gradient(#1e1e2f, #1e1e24);
+}
+
+.full-page > .content {
+  padding-bottom: 150px;
+  padding-top: 150px;
+}
+
+.full-page > .content, .full-page > .footer {
+  position: relative;
+  z-index: 4;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.card.card-white {
+  background: #fff;
+}
+
+.login-page .card-login {
+  border-radius: .4285rem;
+  padding-bottom: .7rem;
+}
+
+.card {
+  background: #27293d;
+  border: 0;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  border-radius: .2857rem;
+}
+
+.card .card-header:not([data-background-color]) {
+  background-color: transparent;
+}
+
+.login-page .card-login .card-header {
+  padding: 0 0 100px;
+  overflow: hidden;
+}
+
+.card .card-header {
+  padding: 15px 15px 0;
+  border: 0;
+  color: rgba(255, 255, 255, .8);
+}
+
+.card-header:first-child {
+  border-radius: calc(.2857rem - .0625rem) calc(.2857rem - .0625rem) 0 0;
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0;
+  background-color: #f6f9fc;
+  border-bottom: .0625rem solid rgba(34, 42, 66, .05);
+}
+
+@media (max-width: 767.98px) {
+  .login-page .card-login .card-header img {
+    width: 70%;
+  }
+}
+
+.login-page .card-login .card-header img {
+  position: absolute;
+}
+
+img {
+  max-width: 100%;
+  border-radius: .2857rem;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.login-page .card-login.card-white .card-header .card-title {
+  color: #fff;
+}
+
+.login-page .card-login .card-header .card-title {
+  position: relative;
+  font-size: 4em;
+  font-weight: 700;
+  color: #222a42;
+  text-transform: lowercase;
+  margin-left: -5px;
+  z-index: 1;
+}
+
+.card.card-white .card-title {
+  color: #222a42;
+}
+
+.card .card-header .card-title {
+  color: #fff;
+  font-weight: 100;
+}
+
+.card .card-body {
+  padding: 15px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.form-group, .input-group {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group-prepend {
+  margin-right: 0;
+}
+
+.input-group-append, .input-group-prepend {
+  display: flex;
+}
+
+.login-page .card-login.card-white .input-group-prepend .input-group-text {
+  border-right: none;
+  border-color: rgba(29, 37, 59, .2);
+  color: #1d253b;
+}
+
+.card.card-white .input-group-prepend .input-group-text {
+  border-right: none;
+  border-color: rgba(29, 37, 59, .2);
+  color: #1d253b;
+}

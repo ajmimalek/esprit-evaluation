@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="myNav">
+  <a class="navbar-brand"><img alt="" class="w-25 img-fluid" src="../../../assets/img/Logo_ESPRIT_-_Tunisie.png">
+    Evaluation</a>
+  <button (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarTogglerDemo02"
+          aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler btn btn-outline-primary"
+          data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link active" href="#"><i class=" tim-icons icon-single-02"></i> Se connecter </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<app-login></app-login>
+<app-footer></app-footer>
