@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 
 declare interface RouteInfo {
   path: string;
@@ -15,46 +15,34 @@ export const ROUTES: RouteInfo[] = [
     class: ''
   },
   {
-    path: 'icons',
-    title: 'Icons',
-    icon: 'icon-atom',
+    path: 'enseignants',
+    title: 'Corps Enseignant',
+    icon: 'icon-bulb-63',
     class: ''
   },
   {
-    path: 'maps',
-    title: 'Maps',
-    icon: 'icon-pin',
+    path: 'reclamations',
+    title: 'Réclamations Etudiants',
+    icon: 'icon-satisfied',
     class: ''
   },
   {
-    path: 'notifications',
-    title: 'Notifications',
-    icon: 'icon-bell-55',
+    path: 'parametres',
+    title: 'Paramétres',
+    icon: 'icon-settings',
     class: ''
   },
 
   {
     path: 'user',
-    title: 'User Profile',
+    title: 'Mon Profile',
     icon: 'icon-single-02',
     class: ''
   },
   {
-    path: 'tables',
-    title: 'Table List',
-    icon: 'icon-puzzle-10',
-    class: ''
-  },
-  {
-    path: 'typography',
-    title: 'Typography',
-    icon: 'icon-align-center',
-    class: ''
-  },
-  {
-    path: 'rtl',
-    title: 'RTL Support',
-    icon: 'icon-world',
+    path: 'cours',
+    title: 'Bibliothéque de Cours',
+    icon: 'icon-book-bookmark',
     class: ''
   }
 ];
@@ -66,7 +54,6 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
   constructor() {
   }
 
@@ -77,4 +64,5 @@ export class SidebarComponent implements OnInit {
   isMobileMenu() {
     return window.innerWidth <= 991;
   }
+
 }

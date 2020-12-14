@@ -1,8 +1,9 @@
-import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
-import {ROUTES} from '../sidebar/sidebar.component';
+import {Component, ElementRef, Input, OnDestroy, OnInit} from '@angular/core';
+import {ROUTES, SidebarComponent} from '../sidebar/sidebar.component';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoginService} from '../../shared/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,12 +18,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private listTitles: any[];
   private toggleButton: any;
   private sidebarVisible: boolean;
+  isLoggedIn: boolean;
 
   constructor(
     location: Location,
     private element: ElementRef,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private loginService : LoginService
   ) {
     this.location = location;
     this.sidebarVisible = false;
@@ -53,6 +56,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.mobile_menu_visible = 0;
       }
     });
+    this.isLoggedIn = this.loginService.isLoggedIn();
   }
 
   collapse() {
@@ -162,17 +166,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   getTitle() {
-    var titlee = this.location.prepareExternalUrl(this.location.path());
-    if (titlee.charAt(0) === '#') {
-      titlee = titlee.slice(1);
-    }
-
-    for (var item = 0; item < this.listTitles.length; item++) {
-      if (this.listTitles[item].path === titlee) {
-        return this.listTitles[item].title;
-      }
-    }
-    return 'Dashboard';
+    let currentPath = this.router.url.slice(7);
+    // console.log(this.menuItems.findIndex());
+    return currentPath ;
   }
 
   open(content) {
@@ -195,5 +191,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  logout() {
+    localStorage.removeItem('myToken');
+    this.router.navigate(['/login']);
   }
 }

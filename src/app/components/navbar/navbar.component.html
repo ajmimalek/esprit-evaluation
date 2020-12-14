@@ -8,7 +8,7 @@
           <span class=" navbar-toggler-bar bar3"> </span>
         </button>
       </div>
-      <a class=" navbar-brand" href="javascript:void(0)"> {{ getTitle() }} </a>
+      <a class=" navbar-brand" href="javascript:void(0)"> {{getTitle()}} </a>
     </div>
     <button
       (click)="collapse()"
@@ -97,13 +97,13 @@
             </li>
             <li class=" nav-link">
               <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
-                Settings
+                Paramétres
               </a>
             </li>
             <li class=" dropdown-divider"></li>
             <li class=" nav-link">
-              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
-                Log out
+              <a class=" nav-item" href="javascript:void(0)" (click)="logout()" ngbDropdownItem>
+                Déconnexion
               </a>
             </li>
           </ul>

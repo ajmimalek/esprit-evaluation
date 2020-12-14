@@ -11,7 +11,6 @@ import {MapComponent} from '../../pages/map/map.component';
 import {NotificationsComponent} from '../../pages/notifications/notifications.component';
 import {UserComponent} from '../../pages/user/user.component';
 import {TablesComponent} from '../../pages/tables/tables.component';
-import {TypographyComponent} from '../../pages/typography/typography.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,9 +27,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     UserComponent,
     TablesComponent,
     IconsComponent,
-    TypographyComponent,
     NotificationsComponent,
-    MapComponent,
+    MapComponent
   ]
 })
 export class AdminLayoutModule {
