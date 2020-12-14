@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-admin-layout',
@@ -21,5 +21,6 @@ export class AdminLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 }

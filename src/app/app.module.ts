@@ -12,6 +12,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {ComponentsModule} from './components/components.module';
 import {AuthentificationModule} from './layouts/authentification/authentification.module';
 import {AuthentificationComponent} from './layouts/authentification/authentification.component';
+import { FormulaireensignantComponent } from './pages/formulaire/formulaireensignant/formulaireensignant.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import {AuthentificationComponent} from './layouts/authentification/authentifica
     ToastrModule.forRoot({closeButton : true,progressBar:true,positionClass:'toast-bottom-center'}),
     AuthentificationModule
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthentificationComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthentificationComponent, FormulaireensignantComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

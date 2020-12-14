@@ -11,9 +11,9 @@ interface Marker {
 
 @Component({
   selector: 'app-map',
-  templateUrl: 'map.component.html'
+  templateUrl: 'reclamations.component.html'
 })
-export class MapComponent implements OnInit {
+export class ReclamationsComponent implements OnInit {
   constructor() {
   }
 

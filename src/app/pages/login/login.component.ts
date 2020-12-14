@@ -11,6 +11,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  role: string;
 
   constructor(
     private loginService:LoginService,
@@ -29,16 +30,18 @@ export class LoginComponent implements OnInit {
   login(loginForm: NgForm){
     let data = loginForm.value;
     let admin = new Admin(data.id,null,null,null,data.password,null,null,null,null,null,null);
-    if (loginForm.valid){
-
-    }
     this.loginService.loginAdmin(admin).subscribe(
       (res : any)=>{
-        this.toast.success('Identifié en tant que '+loginForm.value.id,'Connexion réussi');
+        if (loginForm.value.id.startsWith('E')){
+          this.role = 'Enseignant';
+        } else if (loginForm.value.id.startsWith('A')){
+          this.role = 'Admin';
+        }
+        this.toast.success('Identifié en tant que '+this.role,'Connexion réussi');
         console.log(res);
         let token = res.access_token;
         localStorage.setItem('myToken',token);
-        this.router.navigate(['/admin/dashboard']);
+        this.router.navigate(['/dashboard']);
       },error => {
         console.log(error);
         this.toast.error('Veuillez mentionner votre username et votre mot de passe','Username et/ou Mot de passe manquant');

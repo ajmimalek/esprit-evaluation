@@ -6,13 +6,13 @@ import {FormsModule} from '@angular/forms';
 
 import {AdminLayoutRoutes} from './admin-layout.routing';
 import {DashboardComponent} from '../../pages/dashboard/dashboard.component';
-import {IconsComponent} from '../../pages/icons/icons.component';
-import {MapComponent} from '../../pages/map/map.component';
-import {NotificationsComponent} from '../../pages/notifications/notifications.component';
+import {EnseignantsComponent} from '../../pages/enseignants/enseignants.component';
 import {UserComponent} from '../../pages/user/user.component';
-import {TablesComponent} from '../../pages/tables/tables.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {CoursComponent} from '../../pages/cours/cours.component';
+import {ParametresComponent} from '../../pages/parametres/parametres.component';
+import {ReclamationsComponent} from '../../pages/reclamations/reclamations.component';
 
 @NgModule({
   imports: [
@@ -25,10 +25,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     DashboardComponent,
     UserComponent,
-    TablesComponent,
-    IconsComponent,
-    NotificationsComponent,
-    MapComponent
+    CoursComponent,
+    EnseignantsComponent,
+    ParametresComponent,
+    ReclamationsComponent
   ]
 })
 export class AdminLayoutModule {

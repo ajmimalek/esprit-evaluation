@@ -1,0 +1,51 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h1 class=" title text-center">Corps Enseignants</h1>
+        </div>
+        <div class=" card-body">
+          <button type="button" class="btn btn-success animation-on-hover btn-round" routerLink="/addEnseignant">Ajouter un enseignant</button>
+          <div class="alert alert-warning">Pas d'enseignants</div>
+            <table *ngIf="enseignantList.length > 0" class="table">
+              <thead>
+              <tr>
+                <th class="text-center">Photo</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Département</th>
+                <th class="text-right">module Enseignés</th>
+                <th class="text-right">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let enseignant of enseignantList ; let i = index">
+                <td>
+                  <div class="img-container">
+                    <img src="{{enseignant.photo}}" alt="..." width="60px" height="60px" >
+                  </div>
+                </td>
+                <td>{{enseignant.nom}}</td>
+                <td>{{enseignant.prenom}}</td>
+                <td>{{enseignant.departement}}</td>
+                <td class="text-right">{{enseignant.modulesEnseignes}}</td>
+                <td class="td-actions text-right">
+                  <button type="button" rel="tooltip" class="btn btn-info btn-link btn-icon btn-sm">
+                    <i class="tim-icons icon-single-02"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-success btn-link btn-icon btn-sm">
+                    <i class="tim-icons icon-settings"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-icon btn-sm" (click)="delete(enseignant)">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

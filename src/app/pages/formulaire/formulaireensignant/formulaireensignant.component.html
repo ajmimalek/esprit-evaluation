@@ -1,0 +1,122 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <button style="width:20%" class=" btn btn-fill btn-danger"><i class="tim-icons  icon-minimal-left"></i>Retour
+        </button>
+        <div class=" card-header"><h5 class=" title">Ajout d'un Enseignant</h5></div>
+        <div class=" card-body">
+          <form [formGroup]="addEnseignantForm" (ngSubmit)="addEnseignant()">
+            <div class=" row">
+              <div class=" col-md-4 pr-md-1">
+                <div class=" form-group">
+                  <label> Identifiant </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Identifiant"
+                    type="text"
+                  />
+                </div>
+                <small *ngIf="identifiant.touched && identifiant.invalid" class="text-danger">Veuillez introduire votre Identifiant</small><br>
+              </div>
+              <div class=" col-md-4 pr-md-1">
+                <div class=" form-group">
+                  <label> Mot de passe </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Mot de passe"
+                    type="password"
+                  />
+                  <div *ngIf="password.touched && password.invalid">
+                    <small *ngIf="password.errors.required" class="text-danger">Password is required<br></small>
+                  </div>
+                </div>
+                </div>
+              <div class=" col-md-4 px-md-1">
+                  <div class=" form-group">
+                    <label> Prénom </label>
+                    <input
+                      class=" form-control"
+                      placeholder="Prénom"
+                      type="text"
+                    />
+                    <div *ngIf="firstname.touched && firstname.invalid">
+                      <small *ngIf="firstname.errors.required" class="text-danger">Firstname is required<br></small>
+                      <small *ngIf="firstname.errors.pattern" class="text-danger">Invalid Firstname<br></small>
+                      <small *ngIf="firstname.errors.minlength" class="text-danger">Firstname must contain two characters at least</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-4 pr-md-1">
+                <div class=" form-group">
+                  <label> Nom </label>
+                  <input
+                    class=" form-control"
+                    placeholder="Nom"
+                    type="text"
+                  />
+                  <div *ngIf="lastname.touched && lastname.invalid">
+                    <small *ngIf="lastname.errors.required" class="text-danger">Lastname is required<br></small>
+                    <small *ngIf="lastname.errors.pattern" class="text-danger">Invalid Lastname<br></small>
+                    <small *ngIf="lastname.errors.minlength" class="text-danger">Lastname must contain two characters at least</small>
+                  </div>
+                </div>
+              </div>
+               <div class=" col-md-4 pl-md-1">
+                  <div class=" form-group">
+                    <label> Address Email </label>
+                    <input
+                      class=" form-control"
+                      placeholder="mike@email.com"
+                      type="email"
+                    />
+                  </div>
+                </div>
+               <div class=" col-md-4 pr-md-1">
+                  <div class=" form-group">
+                    <label>Date de naissance</label>
+                    <input
+                      class=" form-control"
+                      placeholder="Company"
+                      type="date"
+                    />
+                  </div>
+                </div>
+
+            </div>
+              <div class=" row">
+                <div class=" col-md-6 pl-md-1">
+                  <div class=" form-group">
+                    <label> Ville </label>
+                    <div ngbDropdown>
+                      <a class="btn btn-secondary" id="dropdownBasic2" ngbDropdownToggle>Dropdown Link</a>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic2" *ngFor="let ville of villes ">
+                        <button ngbDropdownItem>{{ville}}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" col-md-6">
+                  <div class=" form-group">
+                    <label> Addresse </label>
+                    <input
+                      class=" form-control"
+                      placeholder="Addresse"
+                      type="text"
+                      value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                    />
+                  </div>
+                </div>
+              </div>
+            <div class=" card-footer">
+              <button class=" btn btn-fill btn-success btn-lg animation-on-hover" >Ajouter</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -166,7 +166,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   getTitle() {
-    let currentPath = this.router.url.slice(7);
+    let currentPath = this.router.url.slice(1);
     // console.log(this.menuItems.findIndex());
     return currentPath ;
   }
